@@ -56,7 +56,7 @@ export class MatomoInjector {
       }
       switch (this.configuration.trackers.length) {
         case 0:
-          // TODO Throw an error if no tracker has been set.
+          console.error('No Tracker is defined in ngx-matomo configuration.');
           break;
         case 1:
           const mainTracker = this.configuration.trackers[0];
