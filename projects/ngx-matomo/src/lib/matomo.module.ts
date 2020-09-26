@@ -28,10 +28,12 @@ export class MatomoModule {
   constructor(@Inject(PLATFORM_ID) private readonly platformId,
               private readonly matomoInjector: MatomoInjector) {
 
+    if (isPlatformServer(this.platformId)) {
       console.warn(`ngx-Matomo does not support server platform`);
+    } else {
+      // Inject the Matomo script and create trackers.
+      this.matomoInjector.init();
     }
-    // Inject the Matomo script and create trackers.
-    this.matomoInjector.init();
   }
 
   /**
