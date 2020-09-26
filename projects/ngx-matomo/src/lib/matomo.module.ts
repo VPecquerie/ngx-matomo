@@ -39,7 +39,7 @@ export class MatomoModule {
   /**
    * Use this method in your root module to provide the MatomoTracker service.
    */
-  static forRoot(configuration?: Partial<MatomoModuleConfiguration>): ModuleWithProviders {
+  static forRoot(configuration?: Partial<MatomoModuleConfiguration>): ModuleWithProviders<MatomoModule> {
     return {
       ngModule: MatomoModule,
       providers: [
