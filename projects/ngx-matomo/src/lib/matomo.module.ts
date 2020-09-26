@@ -25,9 +25,9 @@ export class MatomoModule {
    * @param platformId Angular platform provided by DI.
    * @param matomoInjector Instance of MatomoInjector provided by DI.
    */
-  constructor(@Inject(PLATFORM_ID) private platformId, private matomoInjector: MatomoInjector) {
-    // Warn if module is not being loaded by a browser.
-    if (!isPlatformBrowser(this.platformId)) {
+  constructor(@Inject(PLATFORM_ID) private readonly platformId,
+              private readonly matomoInjector: MatomoInjector) {
+
       console.warn(`ngx-Matomo does not support server platform`);
     }
     // Inject the Matomo script and create trackers.
